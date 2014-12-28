@@ -6,7 +6,7 @@
 # TO_RUN:         docker run -p 5000:5000 registry
 
 # Latest Ubuntu LTS
-FROM ubuntu:14.04
+FROM debian:latest
 
 # Update
 RUN apt-get update \
@@ -18,7 +18,7 @@ RUN apt-get update \
         python-dev \
         libssl-dev \
         liblzma-dev \
-        libevent1-dev \
+        libevent-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . /docker-registry
